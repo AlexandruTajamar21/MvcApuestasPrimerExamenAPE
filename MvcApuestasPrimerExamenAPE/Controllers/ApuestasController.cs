@@ -52,8 +52,8 @@ namespace MvcApuestasPrimerExamenAPE.Controllers
 
         public IActionResult CreateJugador(int idEquipo)
         {
-            ViewData["EQUIPO"] = idEquipo;
-            return View();
+            List<Equipo> equipos = this.repo.GetEquipos();
+            return View(equipos);
         }
 
         [HttpPost]

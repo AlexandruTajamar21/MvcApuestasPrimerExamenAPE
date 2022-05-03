@@ -24,9 +24,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Imagen)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdEquipo)
-            </th>
         </tr>
     </thead>
     <tbody>
@@ -43,9 +40,6 @@
             </td>
             <td>
                 <img src="https://bucket-apuestas-examen.s3.amazonaws.com/@item.Imagen" style="width:100px;height:200px" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEquipo)
             </td>
         </tr>
 }

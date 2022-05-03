@@ -1,4 +1,5 @@
-﻿@{ ViewData["Title"] = "Create"; }
+﻿@model IEnumerable<MvcApuestasPrimerExamenAPE.Models.Equipo>
+@{ ViewData["Title"] = "Create"; }
 
 <h1>Create</h1>
 
@@ -24,8 +25,14 @@
                 <input name="Imagen" type="file" class="form-control" />
             </div>
             <div class="form-group">
-                <label class="control-label">IdEquipo</label>
-                <input name="IdEquipo" type="number" class="form-control" />
+                <label class="control-label">Equipo</label>
+                <select name="IdEquipo">
+                    @foreach(var item in Model)
+                    {
+                       <option value="@item.IdEquipo">@item.Nombre</option>
+                    }
+                </select>
+                @*<input name="IdEquipo" type="number" class="form-control" />*@
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
