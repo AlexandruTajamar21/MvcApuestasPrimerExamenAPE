@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MvcApuestasPrimerExamenAPE.Models
 {
-    [Table("")]
+    [Table("JUGADORES")]
     public class Jugador
     {
         [Key]

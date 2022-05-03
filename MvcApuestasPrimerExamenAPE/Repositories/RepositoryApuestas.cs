@@ -27,5 +27,17 @@ namespace MvcApuestasPrimerExamenAPE.Repositories
         {
             return this.context.Apuestas.ToList();
         }
+
+        public void InsetApuesta(Apuesta apuesta)
+        {
+            this.context.Apuestas.Add(apuesta);
+            this.context.SaveChanges();
+        }
+
+        public void InsertJugador(Jugador jugador)
+        {
+            this.context.Jugadores.Add(jugador);
+            this.context.SaveChanges();
+        }
     }
 }

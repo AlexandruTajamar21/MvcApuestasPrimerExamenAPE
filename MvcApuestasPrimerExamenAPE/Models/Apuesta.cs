@@ -14,7 +14,7 @@ namespace MvcApuestasPrimerExamenAPE.Models
         [Column("IDAPUESTA")]
         public int IdApuesta { get; set; }
         [Column("USUARIO")]
-        public int Usuario { get; set; }
+        public string Usuario { get; set; }
         [Column("IDEQUIPOLOCAL")]
         public int IdEquipoLocal { get; set; }
         [Column("IDEQUIPOVISITANTE")]

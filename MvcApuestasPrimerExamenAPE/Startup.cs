@@ -1,3 +1,4 @@
+using Amazon.S3;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MvcApuestasPrimerExamenAPE.Data;
 using MvcApuestasPrimerExamenAPE.Repositories;
+using MVCDoctoresCasa.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +30,8 @@ namespace MvcApuestasPrimerExamenAPE
         {
             services.AddCors(options => options.AddPolicy("AllowOrigin", x => x.AllowAnyOrigin()));
             string url = this.Configuration.GetConnectionString("CadenaAWS");
+            services.AddAWSService<IAmazonS3>();
+            services.AddTransient<ServiceS3>();
             services.AddTransient<RepositoryApuestas>();
             services.AddDbContext<ApuestasContext>(
                 options => options.UseMySql(url, ServerVersion.AutoDetect(url)));

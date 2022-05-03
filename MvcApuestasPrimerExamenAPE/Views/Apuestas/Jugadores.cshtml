@@ -7,7 +7,7 @@
 <h1>Jugadores</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="CreateJugador" class="btn btn-success">Nuevo Jugador</a>
 </p>
 <table class="table">
     <thead>
@@ -42,7 +42,7 @@
                 @Html.DisplayFor(modelItem => item.Posicion)
             </td>
             <td>
-                <img src="@item.Imagen" style="width:100px;height:200px" />
+                <img src="https://bucket-apuestas-examen.s3.amazonaws.com/@item.Imagen" style="width:100px;height:200px" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdEquipo)
